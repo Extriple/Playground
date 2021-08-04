@@ -7,6 +7,8 @@ public class BallPower : MonoBehaviour
     [SerializeField] private float force = 15f;
     private Vector3 hitDirection;
 
+    Health health;
+
 
     void OnCollisionEnter(Collision collision)
     {
