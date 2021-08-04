@@ -389,7 +389,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 787cb25de3401c44b939f2599cda764c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6077,7 +6077,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -3.3420329e-15}
+  m_BoundingSphereOverride: {x: 2.2e-44, y: -2.4405384e-30, z: 9.188e-41, w: 2.75506e-40}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -6343,6 +6343,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1619998901226053148}
     m_Modifications:
+    - target: {fileID: 479373852478288629, guid: b56c5717b2c21b54c93b2d1598229aac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 610734793805633963, guid: b56c5717b2c21b54c93b2d1598229aac, type: 3}
       propertyPath: m_Range
       value: 29.05
