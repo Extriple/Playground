@@ -12,6 +12,7 @@ public class Climb : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        //If player is in collision with ladder, player can climb
        if (collision.gameObject.tag == "Player")
         {
             canClimb = true;
@@ -20,6 +21,7 @@ public class Climb : MonoBehaviour
     }
     void OnCollisionExit(Collision collision)
     {
+        //Finish climbing
         if (collision.gameObject.tag == "Player")
         {
             canClimb = false;
@@ -31,6 +33,7 @@ public class Climb : MonoBehaviour
     {
         if (canClimb)
         {
+            //Input system on the ladder 
             if (Input.GetKey(KeyCode.W))
             {
                 player.transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * speed);

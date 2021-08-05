@@ -14,16 +14,19 @@ public class Health : MonoBehaviour
 
     void Update()
     {
+        //Show health on the screen.
         text.text = "Health: " + hpPoints.ToString();
     }
 
     public bool IsDead()
     {
+        //Check hp 
         return isDead;
     }
 
     public void TakeDamage(float damage)
     {
+        //Take damage function
         hpPoints = Mathf.Max(hpPoints - damage, 0);
         if (hpPoints == 0)
         {
@@ -34,6 +37,7 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
+        //Reload scene when player die
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

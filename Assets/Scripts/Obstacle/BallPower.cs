@@ -12,6 +12,7 @@ public class BallPower : MonoBehaviour
     {
         foreach(ContactPoint contact in collision.contacts)
         {
+            //Take damage and push back when Player is on the collision
             if (collision.gameObject.tag == "Player")
             {
                 hitDirection = contact.normal;

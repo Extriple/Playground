@@ -14,13 +14,13 @@ public class FPS : MonoBehaviour
 
     void Reset()
     {
-        // Get the character from the FirstPersonMovement in parents.
+        // Get Movment to the ParentObject "Player"
         player = GetComponentInParent<Movement>().transform;
     }
 
     void Start()
     {
-        // Lock the mouse cursor to the game screen.
+        // Lock the mouse cursor.
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -33,7 +33,7 @@ public class FPS : MonoBehaviour
         velocity += frameVelocity;
         velocity.y = Mathf.Clamp(velocity.y, -90, 90);
 
-        // Rotate camera up-down and controller left-right from velocity.
+        //Rotate camer up-down. Rotate controller left-right. 
         transform.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);
         player.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);
 

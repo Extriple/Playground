@@ -16,6 +16,7 @@ public class GroundChecker : MonoBehaviour
 
     void LateUpdate()
     {
+        //Create Raycast and check road to the ground
         bool isGroundedNow = Physics.Raycast(RaycastOrigin, Vector3.down, maxDisFromGround * 2);
 
         if (isGroundedNow && !isGrounded)

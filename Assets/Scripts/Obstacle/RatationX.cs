@@ -9,11 +9,14 @@ public class RatationX : MonoBehaviour
 
     void Update()
     {
+        //Rotate mechanism
         transform.Rotate(0f, 0f, speed * Time.deltaTime / 0.01f, Space.Self);
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        //Take damage when player is on collision
+
         foreach (ContactPoint contact in collision.contacts)
         {
             if (collision.gameObject.tag == "Player")

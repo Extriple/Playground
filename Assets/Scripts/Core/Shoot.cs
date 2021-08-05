@@ -20,6 +20,7 @@ public class Shoot : MonoBehaviour
 
     void Start()
     {
+        //Winner text active, when you win the game
         killsCounter.text = "Kills: " + 0;
         meshPro.GetComponent<TextMeshProUGUI>();
         meshPro.gameObject.SetActive(false);
@@ -37,19 +38,23 @@ public class Shoot : MonoBehaviour
 
     void Shooting()
     {
+        //weapon targeting and mouse targeting system
         RaycastHit hit;
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range))
         {
+            //Take damage from enemy
             Target target  = hit.transform.GetComponent<Target>();
             if (target != null)
             {
                 target.TakeDamage(damage);
                 if (target.isDead)
                 {
+                    //Count score when enemy die
                     score++;
                     killsCounter.text = "Kills: " + score.ToString(); 
                 }
             }
+            //Bullet trajectory with raycast.
             GameObject bullet = Instantiate(ammo, transform.position, transform.rotation) as GameObject;
              bullet.GetComponent<Rigidbody>().velocity = (hit.point - transform.position).normalized * bulletSpeed;
             Destroy(bullet.gameObject, 2f);
@@ -58,6 +63,7 @@ public class Shoot : MonoBehaviour
 
     public void Winner()
     {
+        //Quest "Win the game" 
         if (score == 11)
         {
             meshPro.gameObject.SetActive(true);

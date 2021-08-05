@@ -12,6 +12,7 @@ public class JumpText : MonoBehaviour
 
     void Update()
     {
+        //Jump Counter
         if(isPlaying)
         {
             if (Input.GetButton("Jump"))

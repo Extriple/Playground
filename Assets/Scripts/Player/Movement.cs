@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
             // Get targetVelocity from input.
             Vector2 targetVelocity = new Vector2(Input.GetAxis("Horizontal") * movingSpeed, Input.GetAxis("Vertical") * movingSpeed);
 
-        // Apply movement.
+        // Add Movement
         rb.velocity = transform.rotation * new Vector3(targetVelocity.x, rb.velocity.y, targetVelocity.y);
         }
 }

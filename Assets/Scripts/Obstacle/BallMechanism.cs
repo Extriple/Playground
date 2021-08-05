@@ -8,9 +8,10 @@ public class BallMechanism : MonoBehaviour
     
     [SerializeField] private float speed = 1.5f;
     [SerializeField] private float limit = 75f;
-    // Update is called once per frame
+
     void Update()
     {
+        // uniform motion of the ball
         float angle = limit * Mathf.Sin(Time.time + value * speed);
         transform.localRotation = Quaternion.Euler(0, 0, angle);
     }

@@ -19,6 +19,7 @@ public class Jumping : MonoBehaviour
 
     void Reset()
     {
+        //Add GroundChecker
         groundChecker = GetComponentInChildren<GroundChecker>();
     }
 
@@ -28,8 +29,10 @@ public class Jumping : MonoBehaviour
     }
     void Update()
     {
+        //Add jump ticker mechanism. 
         if (Input.GetButtonDown("Jump") && (!groundChecker || groundChecker.isGrounded))
         {
+            //Add jump ticker + add jump ticker to string
             jumpTicker++;
             text.text = "Jump Ticker: " + jumpTicker.ToString();
         }
@@ -37,6 +40,7 @@ public class Jumping : MonoBehaviour
 
     void LateUpdate()
     {
+        //Jump Input system. 
         if (Input.GetButtonDown("Jump") && (!groundChecker || groundChecker.isGrounded))
         {
             rb.AddForce(Vector3.up * 100 * jumpForce);

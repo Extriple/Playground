@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        //When game is playing, calculate time in game
         if (isPlaying == true)
         {
             timer += Time.deltaTime;

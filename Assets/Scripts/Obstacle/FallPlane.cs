@@ -8,6 +8,7 @@ public class FallPlane : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        //When player touch a plane, he/she has a 1 sec to jump on the other, because plane deactives
         foreach(ContactPoint contactPoint in collision.contacts)
         {
             if (collision.gameObject.tag == "Player")
@@ -17,6 +18,7 @@ public class FallPlane : MonoBehaviour
         }
     }
 
+    //Deactive plane after 1 sec
     IEnumerator FallDown(float time)
     {
         yield return new WaitForSeconds(time);

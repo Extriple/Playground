@@ -12,6 +12,7 @@ public class Target : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        //Enemy take damage function
         hp -= amount;
         if (hp <= 0f)
         {
@@ -19,6 +20,7 @@ public class Target : MonoBehaviour
         }
     }
 
+    //Kill enemy
     void Die()
     {
         isDead = true;
