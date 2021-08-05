@@ -16,16 +16,9 @@ public class BallPower : MonoBehaviour
             {
                 hitDirection = contact.normal;
                 collision.gameObject.GetComponent<Player>().HitPlayer(-hitDirection * force);
+                collision.gameObject.GetComponent<Health>().TakeDamage(damage);
                 return;
             }
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (GameObject.FindGameObjectWithTag("Player"))
-        {
-            other.GetComponent<Health>().TakeDamage(damage);
         }
     }
 }
