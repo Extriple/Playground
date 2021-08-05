@@ -6,13 +6,13 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed = 6f;
 
-    Rigidbody rigidbody;
+    Rigidbody rb;
 
 
 
     void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
         void FixedUpdate()
@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
             // Get targetVelocity from input.
             Vector2 targetVelocity = new Vector2(Input.GetAxis("Horizontal") * movingSpeed, Input.GetAxis("Vertical") * movingSpeed);
 
-            // Apply movement.
-            rigidbody.velocity = transform.rotation * new Vector3(targetVelocity.x, rigidbody.velocity.y, targetVelocity.y);
+        // Apply movement.
+        rb.velocity = transform.rotation * new Vector3(targetVelocity.x, rb.velocity.y, targetVelocity.y);
         }
 }

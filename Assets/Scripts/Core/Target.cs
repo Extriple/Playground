@@ -7,10 +7,9 @@ public class Target : MonoBehaviour
 {
     [SerializeField] private float hp = 100f;
 
-    public Text text;
-
-
+    public bool isDead = false;
   
+
     public void TakeDamage(float amount)
     {
         hp -= amount;
@@ -22,6 +21,7 @@ public class Target : MonoBehaviour
 
     void Die()
     {
+        isDead = true;
         Destroy(gameObject);
     }
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4261533201365996615}
-  - component: {fileID: 8744858995252701317}
+  - component: {fileID: 7424225360606725627}
   m_Layer: 0
   m_Name: Bullet Spawner
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 2826927715350087190}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8744858995252701317
+--- !u!114 &7424225360606725627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,10 +40,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2025386813167016785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef81ed8d703d8e4b925f47ad395b0b9, type: 3}
+  m_Script: {fileID: 11500000, guid: dfa88b48e96fe8a439bd113f68cf28c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pfBullet: {fileID: 7545135667481631459, guid: 7d37674f3808bf24eb78fedd9ae8c726, type: 3}
+  damage: 20
+  range: 200
+  bulletSpeed: 50
+  playerCamera: {fileID: 0}
+  particleSystemWeapon: {fileID: 0}
+  killsCounter: {fileID: 0}
+  ammo: {fileID: 0}
 --- !u!1 &2826927715349797430
 GameObject:
   m_ObjectHideFlags: 0

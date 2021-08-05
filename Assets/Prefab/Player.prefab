@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpPoints: 100
-  text: {fileID: 0}
+  text: {fileID: 439242083328735787, guid: 0cbb4b8606c607942a30751b267d8433, type: 3}
 --- !u!114 &8258805388634720585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 2
   groundChecker: {fileID: 1116340084881060694}
+  text: {fileID: 8609625772596778258, guid: 27783d436345a2f44b5cbac01a7809e2, type: 3}
 --- !u!1 &3589496333254447473
 GameObject:
   m_ObjectHideFlags: 0
@@ -5341,7 +5342,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -1.2346746e-10, z: 4.5904e-41, w: 25.777267}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -5517,7 +5518,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7424225360606725627, guid: b56c5717b2c21b54c93b2d1598229aac, type: 3}
+      propertyPath: ammo
+      value: 
+      objectReference: {fileID: 7545135667481631459, guid: 7d37674f3808bf24eb78fedd9ae8c726, type: 3}
+    - target: {fileID: 7424225360606725627, guid: b56c5717b2c21b54c93b2d1598229aac, type: 3}
+      propertyPath: killsCounter
+      value: 
+      objectReference: {fileID: 7499903903552724237, guid: a75cbe7415281784fbb55720b91d41bd, type: 3}
+    - target: {fileID: 7424225360606725627, guid: b56c5717b2c21b54c93b2d1598229aac, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1602451533019132078}
+    - target: {fileID: 7424225360606725627, guid: b56c5717b2c21b54c93b2d1598229aac, type: 3}
+      propertyPath: particleSystemWeapon
+      value: 
+      objectReference: {fileID: 6080241166092479444}
+    m_RemovedComponents:
+    - {fileID: 8744858995252701317, guid: b56c5717b2c21b54c93b2d1598229aac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b56c5717b2c21b54c93b2d1598229aac, type: 3}
 --- !u!4 &4801448483599185767 stripped
 Transform:

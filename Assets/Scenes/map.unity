@@ -133,6 +133,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5263193850122822932, guid: 51adaef03ddeb2746b9460a33e9cab3b, type: 3}
   m_PrefabInstance: {fileID: 1617929439}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &35892940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8755831793505462816, guid: d32ab1d2b679fcc4497786ad7b7b5ada, type: 3}
+  m_PrefabInstance: {fileID: 1337827214}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &35892941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35892940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa88b48e96fe8a439bd113f68cf28c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  range: 3000
+  bulletSpeed: 70
+  playerCamera: {fileID: 664848081}
+  particleSystemWeapon: {fileID: 1420360352}
+  killsCounter: {fileID: 307856613}
+  ammo: {fileID: 7545135667481631459, guid: 7d37674f3808bf24eb78fedd9ae8c726, type: 3}
 --- !u!1001 &70437166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -284,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  text: {fileID: 307856613}
+  isDead: 0
 --- !u!136 &113925999
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1419,7 +1443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  text: {fileID: 307856613}
+  isDead: 0
 --- !u!136 &384520594
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2642,7 +2666,7 @@ GameObject:
   - component: {fileID: 579077909}
   - component: {fileID: 579077908}
   m_Layer: 0
-  m_Name: New Game Object
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2955,12 +2979,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579077907}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 99.95006, y: 0, z: 28.970797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 717540654}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &597332793
 PrefabInstance:
@@ -3079,7 +3103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  text: {fileID: 307856613}
+  isDead: 0
 --- !u!136 &612567488
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4004,6 +4028,7 @@ Transform:
   - {fileID: 1404754786}
   - {fileID: 877560359}
   - {fileID: 473705460}
+  - {fileID: 579077913}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5637,7 +5662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 455.2, y: 219}
+  m_AnchoredPosition: {x: 455.2, y: 207.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1012520441
@@ -5667,7 +5692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7215,7 +7240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  text: {fileID: 307856613}
+  isDead: 0
 --- !u!136 &1280541639
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7374,6 +7399,14 @@ PrefabInstance:
     - target: {fileID: 6080241166092479444, guid: d32ab1d2b679fcc4497786ad7b7b5ada, type: 3}
       propertyPath: InitialModule.startColor.minColor.r
       value: 0.8962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826729078244402486, guid: d32ab1d2b679fcc4497786ad7b7b5ada, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.297
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826729078244402486, guid: d32ab1d2b679fcc4497786ad7b7b5ada, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.034
       objectReference: {fileID: 0}
     - target: {fileID: 6826729078244402486, guid: d32ab1d2b679fcc4497786ad7b7b5ada, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8958,7 +8991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  text: {fileID: 307856613}
+  isDead: 0
 --- !u!136 &1487555628
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9681,7 +9714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  text: {fileID: 307856613}
+  isDead: 0
 --- !u!136 &1671184962
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10613,7 +10646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  text: {fileID: 307856613}
+  isDead: 0
 --- !u!136 &1858109600
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11410,7 +11443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  text: {fileID: 307856613}
+  isDead: 0
 --- !u!136 &1966864452
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12192,28 +12225,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!1 &2045927995 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1617878523288716724, guid: d32ab1d2b679fcc4497786ad7b7b5ada, type: 3}
-  m_PrefabInstance: {fileID: 1337827214}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2045927996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045927995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfa88b48e96fe8a439bd113f68cf28c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
-  range: 3000
-  bulletSpeed: 70
-  camera: {fileID: 664848081}
-  particleSystem: {fileID: 1420360352}
 --- !u!4 &2051646556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5263193850122822932, guid: 51adaef03ddeb2746b9460a33e9cab3b, type: 3}
@@ -12297,7 +12308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  text: {fileID: 307856613}
+  isDead: 0
 --- !u!136 &2088008540
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12392,7 +12403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.23353505, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12437,7 +12448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 277.5, y: 202.2}
+  m_AnchoredPosition: {x: 277.5, y: 190.3}
   m_SizeDelta: {x: 173.4285, y: 59.2999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &2109103735 stripped

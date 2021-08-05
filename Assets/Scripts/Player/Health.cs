@@ -27,7 +27,7 @@ public class Health : MonoBehaviour
         hpPoints = Mathf.Max(hpPoints - damage, 0);
         if (hpPoints == 0)
         {
-            bool isDead = true;
+            isDead = true;
             Die();
         }
     }

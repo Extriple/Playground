@@ -5,7 +5,6 @@ using UnityEngine;
 public class FallPlane : MonoBehaviour
 {
     [SerializeField] private float time = 1f;
-    [SerializeField] private float setActiveTrue = 15f;
 
     void OnCollisionEnter(Collision collision)
     {

@@ -12,7 +12,7 @@ public class Jumping : MonoBehaviour
     public event System.Action Jumped;
     public Text text;
 
-    Rigidbody rigidbody;
+    Rigidbody rb;
 
     private int jumpTicker = 0;
 
@@ -24,7 +24,7 @@ public class Jumping : MonoBehaviour
 
     void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
     void Update()
     {
@@ -39,7 +39,7 @@ public class Jumping : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && (!groundChecker || groundChecker.isGrounded))
         {
-            rigidbody.AddForce(Vector3.up * 100 * jumpForce);
+            rb.AddForce(Vector3.up * 100 * jumpForce);
             Jumped?.Invoke();
         }
     }
