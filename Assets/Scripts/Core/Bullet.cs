@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
         {
             GameObject bullet = Instantiate(pfBullet, transform.position, transform.rotation) as GameObject;
             Rigidbody rbBullet = bullet.GetComponent<Rigidbody>();
-            rbBullet.AddForce(transform.forward * 1000f);
+            rbBullet.AddForce(transform.forward * 3000f);
             Destroy(rbBullet.gameObject, 2f);
 
 

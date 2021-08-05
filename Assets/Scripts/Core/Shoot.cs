@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     [SerializeField] float damage = 20f;
-    [SerializeField] float range = 100f;
+    [SerializeField] float range = 200f;
     [SerializeField] float bulletSpeed = 50f;
 
     public Camera camera;

@@ -5,10 +5,8 @@ using UnityEngine;
 public class BallPower : MonoBehaviour
 {
     [SerializeField] private float force = 15f;
+    [SerializeField] private float damage = 20f;
     private Vector3 hitDirection;
-
-    Health health;
-
 
     void OnCollisionEnter(Collision collision)
     {
@@ -20,6 +18,14 @@ public class BallPower : MonoBehaviour
                 collision.gameObject.GetComponent<Player>().HitPlayer(-hitDirection * force);
                 return;
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (GameObject.FindGameObjectWithTag("Player"))
+        {
+            other.GetComponent<Health>().TakeDamage(damage);
         }
     }
 }
