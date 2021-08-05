@@ -5,6 +5,7 @@ using UnityEngine;
 public class FallPlane : MonoBehaviour
 {
     [SerializeField] private float time = 1f;
+    [SerializeField] private float setActiveTrue = 15f;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -20,7 +21,6 @@ public class FallPlane : MonoBehaviour
     IEnumerator FallDown(float time)
     {
         yield return new WaitForSeconds(time);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
-
 }

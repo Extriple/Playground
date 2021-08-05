@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public GameObject pfBullet;
 
 
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -15,11 +16,6 @@ public class Bullet : MonoBehaviour
             Rigidbody rbBullet = bullet.GetComponent<Rigidbody>();
             rbBullet.AddForce(transform.forward * 3000f);
             Destroy(rbBullet.gameObject, 2f);
-
-
         }
     }
-
-
-
 }

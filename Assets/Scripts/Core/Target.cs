@@ -9,8 +9,8 @@ public class Target : MonoBehaviour
 
     public Text text;
 
-    private int times = 0;
 
+  
     public void TakeDamage(float amount)
     {
         hp -= amount;
@@ -23,8 +23,5 @@ public class Target : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
-        times++;
-        text.text = "Enemy ticker: " + times.ToString();
-        Debug.Log(times);
     }
 }
