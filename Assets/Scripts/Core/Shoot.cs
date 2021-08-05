@@ -1,24 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
 {
     [SerializeField] float damage = 20f;
-    [SerializeField] float range = 200f;
+    [SerializeField] float range = 1000f;
     [SerializeField] float bulletSpeed = 50f;
 
     public Camera playerCamera;
     public ParticleSystem particleSystemWeapon;
     public Text killsCounter;
     public GameObject ammo;
+    public TextMeshProUGUI meshPro;
 
     int score = 0;
 
     void Start()
     {
         killsCounter.text = "Kills: " + 0;
+        meshPro.GetComponent<TextMeshProUGUI>();
+        meshPro.gameObject.SetActive(false);
     }
     void Update()
     {
@@ -26,6 +30,7 @@ public class Shoot : MonoBehaviour
         {
             particleSystemWeapon.Play();
             Shooting();
+            Winner();
             
         }
     }
@@ -46,10 +51,16 @@ public class Shoot : MonoBehaviour
                 }
             }
             GameObject bullet = Instantiate(ammo, transform.position, transform.rotation) as GameObject;
-            //Rigidbody rbBullet = 
              bullet.GetComponent<Rigidbody>().velocity = (hit.point - transform.position).normalized * bulletSpeed;
-            //rbBullet.AddForce(transform.forward * 3000f);
             Destroy(bullet.gameObject, 2f);
+        }
+    }
+
+    public void Winner()
+    {
+        if (score == 11)
+        {
+            meshPro.gameObject.SetActive(true);
         }
     }
 }

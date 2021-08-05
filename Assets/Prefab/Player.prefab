@@ -568,8 +568,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.990566, g: 0.06074228, b: 0.06074228, a: 1}
-      maxColor: {r: 0.9150943, g: 0.06436155, b: 0.056114297, a: 1}
+      minColor: {r: 0.60667896, g: 0.058823552, b: 0.99215686, a: 1}
+      maxColor: {r: 0.018689938, g: 0.37070957, b: 0.5660378, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5342,11 +5342,30 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1}
+  m_BoundingSphereOverride: {x: 4.5904e-41, y: -5.7063776e-10, z: 4.5904e-41, w: 9.403955e-38}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6613087409344844947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8755831793505462816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa88b48e96fe8a439bd113f68cf28c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  range: 200
+  bulletSpeed: 50
+  playerCamera: {fileID: 1602451533019132078}
+  particleSystemWeapon: {fileID: 6080241166092479444}
+  killsCounter: {fileID: 0}
+  ammo: {fileID: 7545135667481631459, guid: 7d37674f3808bf24eb78fedd9ae8c726, type: 3}
 --- !u!1001 &7320997239388795249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5540,5 +5559,10 @@ PrefabInstance:
 --- !u!4 &4801448483599185767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2826927715350087190, guid: b56c5717b2c21b54c93b2d1598229aac, type: 3}
+  m_PrefabInstance: {fileID: 7320997239388795249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8755831793505462816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2025386813167016785, guid: b56c5717b2c21b54c93b2d1598229aac, type: 3}
   m_PrefabInstance: {fileID: 7320997239388795249}
   m_PrefabAsset: {fileID: 0}
