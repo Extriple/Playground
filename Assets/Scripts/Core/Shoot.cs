@@ -16,7 +16,10 @@ public class Shoot : MonoBehaviour
 
     int score = 0;
 
-
+    void Start()
+    {
+        killsCounter.text = "Kills: " + 0;
+    }
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -43,10 +46,10 @@ public class Shoot : MonoBehaviour
                 }
             }
             GameObject bullet = Instantiate(ammo, transform.position, transform.rotation) as GameObject;
-            Rigidbody rbBullet = bullet.GetComponent<Rigidbody>();
-             rbBullet.AddForce(transform.forward * 3000f);
-            Destroy(rbBullet.gameObject, 2f);
+            //Rigidbody rbBullet = 
+             bullet.GetComponent<Rigidbody>().velocity = (hit.point - transform.position).normalized * bulletSpeed;
+            //rbBullet.AddForce(transform.forward * 3000f);
+            Destroy(bullet.gameObject, 2f);
         }
     }
-
 }
