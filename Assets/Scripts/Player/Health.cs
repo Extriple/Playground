@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     public Text text;
     bool isDead = false;
 
+
     void Update()
     {
         //Show health on the screen.

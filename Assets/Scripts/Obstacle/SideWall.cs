@@ -15,6 +15,7 @@ public class SideWall : MonoBehaviour
 
     void Awake()
     {
+		//Configure start position
         startPos = transform.position;
         if (horizontal)
         {
@@ -28,7 +29,9 @@ public class SideWall : MonoBehaviour
     void Update()
     {
 		if (horizontal)
+			//Horizontal type
 		{
+			//Forward type
 			if (isForward)
 			{
 				if (transform.position.x < startPos.x + distance)
@@ -50,6 +53,7 @@ public class SideWall : MonoBehaviour
 		}
 		else
 		{
+			//Check the forward position
 			if (isForward)
 			{
 				if (transform.position.z < startPos.z + distance)
